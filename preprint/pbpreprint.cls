@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{pbpreprint}
-\LoadClassWithOptions{memoir}
+\LoadClass[article,oneside]{memoir}
 
 \RequirePackage{booktabs}
 \RequirePackage{float}
@@ -9,10 +9,21 @@
 \RequirePackage{tikz}
 \RequirePackage{letltxmacro}
 \RequirePackage{ebgaramond}
-%\RequirePackage[cmintegrals,cmbraces]{newtxmath}
-%\RequirePackage{ebgaramond-maths}
+\RequirePackage[cmintegrals,cmbraces]{newtxmath}
+\RequirePackage{ebgaramond-maths}
 \RequirePackage{hyperref}
 
+\DeclareOption{watermark}{
+    \AddToShipoutPicture*{
+        \put(0,0){
+            \parbox[b][\paperheight]{\paperwidth}{%
+                \mbox{}\vfill\hfill
+                \includegraphics[width=0.5\paperwidth]{figures/sigillnv.pdf}%
+            }
+        }
+    }
+}
+\ProcessOptions
 \renewcommand{\@todonotes@drawMarginNoteWithLine}{%
     \begin{tikzpicture}[remember picture, overlay, baseline=-0.75ex]%
         \node [coordinate] (inText) {};%
@@ -47,14 +58,14 @@
 \renewcommand{\todo}[1]{{\color{magenta}\oldtodo[fancyline]{\small\color{white}\texttt{TODO:}\textsf{#1}}}}
 \newcommand{\note}[1]{{\color{magenta}\oldtodo[fancyline]{\small\color{white}\textsf{#1}}}}
 
-\setsecheadstyle{\LARGE}
-\setsubsecheadstyle{\large}
-\setsubsubsecheadstyle{\itshape}
-\setparaheadstyle{\normalsize\scshape\liningnums}
 \counterwithout{figure}{chapter}
 \counterwithout{table}{chapter}
-\captionnamefont{\textsf\small}
-\captiontitlefont{\textsf\small}
+\captionnamefont{\bfseries\small}
+\captiontitlefont{\small}
+\renewcommand\printtoctitle[1]{\section*{#1}}
+\renewcommand\aftertoctitle{}
+\setsecnumdepth{chapter}
+\maxtocdepth{subsubsection}
 
 \renewcommand{\thefootnote}{\color{red}\arabic{footnote}}
 
@@ -66,3 +77,5 @@
     \def\Url@underscore{\nfss@text{\leavevmode \kern.06em\vbox{\hrule\@width.3em}}}
 
 \definecolor{uured}{RGB}{153,0,0}
+
+\pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\todo{Consider how much space we want above}\\\Huge\bfseries}
