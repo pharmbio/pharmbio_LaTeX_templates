@@ -23,8 +23,13 @@
             }
         }
     }
+    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
+}
+\DeclareOption{uu}{
+    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
 \ProcessOptions
+
 \renewcommand{\@todonotes@drawMarginNoteWithLine}{%
     \begin{tikzpicture}[remember picture, overlay, baseline=-0.75ex]%
         \node [coordinate] (inText) {};%
@@ -79,4 +84,3 @@
 
 \definecolor{uured}{RGB}{153,0,0}
 
-\pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\todo{Consider how much space we want above}\\\Huge\bfseries}
