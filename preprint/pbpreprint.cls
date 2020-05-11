@@ -12,6 +12,7 @@
 \RequirePackage[cmintegrals,cmbraces]{newtxmath}
 \RequirePackage{ebgaramond-maths}
 \RequirePackage{hyperref}
+\RequirePackage{eso-pic}
 
 \DeclareOption{watermark}{
     \AddToShipoutPicture*{
