@@ -27,10 +27,6 @@
     }
     \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
-\DeclareOption{logo}{
-    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
-}
-
 \newif\if@loadhelvet\@loadhelvetfalse
 
 \DeclareOption{pad}{
@@ -41,6 +37,10 @@
     %\checkandfixthelayout
     \@loadhelvettrue
     \renewcommand\familydefault{\sfdefault}
+}
+
+\DeclareOption{uu}{
+    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
 
 \ProcessOptions
