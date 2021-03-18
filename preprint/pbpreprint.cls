@@ -30,11 +30,11 @@
 \newif\if@loadhelvet\@loadhelvetfalse
 
 \DeclareOption{pad}{
-    %\setstocksize{9in}{6in}
-    %\settrimmedsize{9in}{6in}
-    %\setlrmarginsandblock{0.5in}{0.5in}{*}
-    %\setulmarginsandblock{0.5in}{*}{1}
-    %\checkandfixthelayout
+    \setstocksize{21cm}{15.5cm}
+    \settrimmedsize{21cm}{15.5cm}{*}
+    \setlrmarginsandblock{1.5cm}{3.5cm}{*}
+    \setulmarginsandblock{0.5in}{*}{1}
+    \checkandfixthelayout
     \@loadhelvettrue
     \renewcommand\familydefault{\sfdefault}
 }
