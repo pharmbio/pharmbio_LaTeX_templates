@@ -14,6 +14,8 @@
 \RequirePackage{hyperref}
 \RequirePackage{eso-pic}
 
+\pretitle{\begin{center}\Huge\bfseries}
+
 \DeclareOption{watermark}{
     \AddToShipoutPicture*{
         \put(0,0){
@@ -23,8 +25,30 @@
             }
         }
     }
+    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
+\DeclareOption{logo}{
+    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
+}
+
+\newif\if@loadhelvet\@loadhelvetfalse
+
+\DeclareOption{pad}{
+    %\setstocksize{9in}{6in}
+    %\settrimmedsize{9in}{6in}
+    %\setlrmarginsandblock{0.5in}{0.5in}{*}
+    %\setulmarginsandblock{0.5in}{*}{1}
+    %\checkandfixthelayout
+    \@loadhelvettrue
+    \renewcommand\familydefault{\sfdefault}
+}
+
 \ProcessOptions
+
+\if@loadhelvet
+  \RequirePackage{tgheros}
+\fi
+
 \renewcommand{\@todonotes@drawMarginNoteWithLine}{%
     \begin{tikzpicture}[remember picture, overlay, baseline=-0.75ex]%
         \node [coordinate] (inText) {};%
@@ -79,4 +103,3 @@
 
 \definecolor{uured}{RGB}{153,0,0}
 
-\pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\todo{Consider how much space we want above}\\\Huge\bfseries}
