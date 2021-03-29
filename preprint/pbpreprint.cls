@@ -13,6 +13,7 @@
 \RequirePackage{ebgaramond-maths}
 \RequirePackage{hyperref}
 \RequirePackage{eso-pic}
+\RequirePackage[l2tabu, orthodox]{nag}
 
 \pretitle{\begin{center}\Huge\bfseries}
 
