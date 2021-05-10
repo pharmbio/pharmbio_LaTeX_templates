@@ -7,3 +7,9 @@ preprint/test.log
 preprint/test.out
 preprint/test.pdf
 preprint/test.toc
+.DS_Store
+preprint/.DS_Store
+preprint/test.bbl
+preprint/test.bcf
+preprint/test.blg
+preprint/test.run.xml

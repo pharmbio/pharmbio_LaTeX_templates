@@ -1,5 +1,7 @@
 \documentclass[watermark]{pbpreprint}
 \usepackage{listings}
+\usepackage[backend=biber]{biblatex}\addbibresource{bibliography.bib}
+\usepackage{wasysym}
 
 \newsubfloat{table}
 
@@ -76,7 +78,8 @@ The EBGaramond font contains both old style (\oldstylenums{0, 1, 2, 3, 4, 5, 6,
 7, 8, 9}) numbers and lining numbers (\liningnums{0, 1, 2, 3, 4, 5, 6, 7, 8,
 9}) default is old style. There is also tabular and propotional numbers where
 tabular numbers are good for aligning numbers in tabels (see
-Table~\ref{tabular}). 
+Table~\ref{tabular}). Also remember to cite your
+publications~\cite{spjuth2007bioclipse}.~\smiley{}
 
 
 \begin{table}[h]
@@ -160,5 +163,6 @@ Table~\ref{tabular}).
 \caption{In \texttt{\textbackslash figure} and \texttt{\textbackslash table} use \texttt{\textbackslash centering} instead of \texttt{\textbackslash begin\{center\}} because othewise you are adding extra space that shouldn't be there. Also, figure numbering is strange here because in order to show the extra space I wanted to use real figures which end up with their own numbers.}
 \end{figure}
 
+\printbibliography
 
 \end{document}
