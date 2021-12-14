@@ -1,0 +1,158 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{pgf}  
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepgflibrary{shapes.arrows} 
+\usetikzlibrary{intersections}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+\usetikzlibrary{automata,positioning}
+\usepackage{pgfplots,stackengine}
+\usepackage{fontspec}
+\usepackage{fancyvrb}
+\usepackage{wasysym}
+\usepackage{unicode-math}
+\usepackage{import}
+\usepackage{rotating}
+\usepackage{gensymb}
+\usepackage{chemfig}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{letltxmacro}
+\usepackage{wrapfig}
+\usepackage{mathtools}
+\usepackage{graphbox}
+\usepackage{epigraph}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{hologo}
+\usepackage{multimedia}
+\usepackage[absolute,overlay]{textpos}
+\usepackage[euler-digits,euler-hat-accent]{eulervm}
+%\logo{\pgfputat{\pgfxy(.45,.5)}{\pgfbox[center]{\includegraphics[width=1.7cm]{Figures/Bioclipse.png}}}}
+
+\usetheme{Copenhagen}
+\usecolortheme{beaver}
+
+\definecolor{uured}{RGB}{153,0,0}
+\setbeamercolor{block title}{use=structure,fg=white,bg=uured}
+\setbeamercolor*{item}{fg=uured}
+
+\newcommand{\unilogo}{
+  \setlength{\TPHorizModule}{1pt}
+  \setlength{\TPVertModule}{1pt}
+  \begin{textblock}{1}(26,-10)
+   \includegraphics[height=70pt, align=c]{Figures/uu_shadow.png}
+  \end{textblock}
+  } 
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+  
+\makeatletter
+    \newcases{mycases}{\quad}{%
+        \hfil$\m@th\displaystyle{##}$}{$\m@th\displaystyle{##}$\hfil}{\lbrace}{.}
+\makeatother
+
+\addtobeamertemplate{frametitle}{}{%
+    \unilogo
+}
+
+\LetLtxMacro{\oldBlock}{\block}
+\LetLtxMacro{\endoldBlock}{\endblock}
+\renewcommand{\block}{\begin{center}\begin{minipage}{0.8\textwidth}\oldBlock}
+\renewcommand{\endblock}{\endoldBlock\end{minipage}\end{center}}
+\setlength{\fboxsep}{0pt}
+
+\begin{document}
+\graphicspath{{Figures/}}
+\setsansfont[ItalicFont = Optima Italic,
+             BoldFont = Optima Bold,
+             Ligatures=TeX ]
+            {Optima Regular}
+\setmainfont[ItalicFont = Optima Italic,
+             BoldFont = Optima Bold,
+             Ligatures=TeX]
+            {Optima Regular}
+%\newfontfamily\comment[]{Chalkboard}
+\newfontfamily\zA[Ligatures={Common, Rare}, Variant=1] {Zapfino}
+\newfontfamily\zB[Ligatures={Common, Rare}, Variant=2] {Zapfino}
+\newfontfamily\zC[Ligatures={Common, Rare}, Variant=3] {Zapfino}
+\newfontfamily\zD[Ligatures={Common, Rare}, Variant=4] {Zapfino}
+\newfontfamily\zE[Ligatures={Common, Rare}, Variant=5] {Zapfino}
+\newfontfamily\zF[Ligatures={Common, Rare}, Variant=6] {Zapfino}
+\newfontfamily\zG[Ligatures={Common, Rare}, Variant=7] {Zapfino}
+\renewcommand\UrlFont{\color{blue}}
+\renewcommand\thefootnote{\textcolor{uured}{\arabic{footnote}}}
+\setbeamercolor{alerted text}{fg=uured}
+\lstset{basicstyle=\ttfamily\scriptsize, frame=single }
+\newcommand{\TikZ}{{\lmr Ti\textit{k}Z}}
+
+
+\title{Presentation}   
+\author{Jonathan Alvarsson} 
+\titlegraphic{\includegraphics[height=18pt]{Figures/pharmbio-logo-new.png}}
+\date{\today} 
+
+\setbeamertemplate{background}{%
+    \parbox[c][\paperheight]{\paperwidth}{%
+        \vfill
+        \hfill
+        \includegraphics[height=0.65\textheight]{Figures/sigill.png}
+    }   
+}
+\begin{frame}[plain]
+\unilogo \vspace{1cm} \titlepage
+\begin{tikzpicture}[remember picture,overlay]
+\tikz[remember picture, overlay] \fill[uured] (current page.north west) rectangle ++(\paperwidth,-0.5cm);
+\end{tikzpicture}%
+\end{frame}
+
+\setbeamertemplate{background}{}
+\renewcommand{\unilogo}{
+  \setlength{\TPHorizModule}{1pt}
+  \setlength{\TPVertModule}{1pt}
+  \begin{textblock}{1}(0,0)
+   \includegraphics[height=27pt, align=c]{Figures/uu.png}\includegraphics[height=10pt, align=c]{Figures/pharmbio-logo-new.png}
+  \end{textblock}
+  }
+
+\section{Background}
+    \begin{frame}
+    \frametitle{Outline}
+    \begin{minipage}{0.25\textwidth}
+    \mbox{}
+    \end{minipage}
+    \begin{minipage}{0.6\textwidth}
+    \tableofcontents
+    \end{minipage}
+    \end{frame}
+    
+\subsection{Drug discovery}
+    \frame{
+        \frametitle{title}
+        \framesubtitle{subtitle}
+        \begin{block}{Title}
+        text
+        \end{block}
+    }
+
+\section{Content}
+    \frame{
+        \frametitle{title}
+        \framesubtitle{subtitle}
+        \begin{oldBlock}{Title}
+        text
+        \end{oldBlock}
+    }
+
+\section{Conclusion}
+    \frame{
+        \frametitle{title}
+        \framesubtitle{subtitle}
+    }
+
+\end{document}

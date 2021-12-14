@@ -12,4 +12,14 @@ preprint/.DS_Store
 preprint/test.bbl
 preprint/test.bcf
 preprint/test.blg
-preprint/test.run.xml
+preprint/test.run.xmlpreprint/test.toc
+presentation/.presentation.tex.swp
+presentation/presentation.aux
+presentation/presentation.fdb_latexmk
+presentation/presentation.fls
+presentation/presentation.log
+presentation/presentation.nav
+presentation/presentation.out
+presentation/presentation.pdf
+presentation/presentation.snm
+presentation/presentation.toc
