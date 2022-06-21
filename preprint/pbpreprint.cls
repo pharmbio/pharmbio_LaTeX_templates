@@ -21,12 +21,20 @@
     \AddToShipoutPicture*{
         \put(0,0){
             \parbox[b][\paperheight]{\paperwidth}{%
-                \mbox{}\vfill\hfill
-                \includegraphics[width=0.5\paperwidth]{figures/sigillnv.pdf}%
+                \mbox{}\hfill
+                \includegraphics[width=0.5\paperwidth]{figures/sigillsv.png}%
+                \vfill
             }
         }
+        \put(0,0){
+            \parbox[b][\paperheight]{\paperwidth}{%
+                \vspace{1\baselineskip}\hspace{1em}
+                \includegraphics[width=10em]{figures/UU_logo.pdf}
+                \vfill
+            }
+
+        }
     }
-    \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
 \newif\if@loadhelvet\@loadhelvetfalse
 
