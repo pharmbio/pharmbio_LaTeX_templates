@@ -52,6 +52,20 @@
     \pretitle{\begin{center}\includegraphics[width=8em]{figures/UU_logo.pdf}\\\Huge\bfseries}
 }
 
+\DeclareOption{pharmbio}{
+    \AddToShipoutPicture*{
+        \put(0,0){
+            \parbox[b][\paperheight]{\paperwidth}{%
+                \vspace{1\baselineskip}\hspace{1em}
+                \includegraphics[width=10em]{figures/UU_logo.pdf}
+                \vfill
+            }
+
+        }
+    }
+    \pretitle{\begin{center}\vspace{-48pt}\includegraphics[width=14em]{figures/pharmbio_logo.pdf}\\\Huge\bfseries}
+}
+
 \ProcessOptions
 
 \if@loadhelvet
