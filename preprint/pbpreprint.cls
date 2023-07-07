@@ -8,7 +8,7 @@
                 backgroundcolor=magenta, textwidth=4cm]{todonotes}
 \RequirePackage{tikz}
 \RequirePackage{letltxmacro}
-\RequirePackage{ebgaramond}
+\RequirePackage[tabular]{ebgaramond}
 \RequirePackage[cmintegrals,cmbraces]{newtxmath}
 \RequirePackage{ebgaramond-maths}
 \RequirePackage{hyperref}
